@@ -1,0 +1,10 @@
+# QuantumX/Chart.yaml
+apiVersion: v2
+name: quantumx
+description: A Helm chart for QuantumX Application with Quarkus and PostgreSQL
+type: application
+version: 0.1.0
+dependencies:
+  - name: postgresql
+    repository: "https://charts.bitnami.com/bitnami"
+    version: "^11.0.0"

@@ -1,0 +1,7 @@
+# overlays/staging/patch.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quantumx
+spec:
+  replicas: 2

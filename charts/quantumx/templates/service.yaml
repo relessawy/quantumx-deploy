@@ -1,0 +1,15 @@
+# QuantumX/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: quantumx-service
+  labels:
+    app: quantumx
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: quantumx

@@ -1,0 +1,37 @@
+# QuantumX/values.yaml
+replicaCount: 1
+
+image:
+  repository: quay.io/relessaw/quantumx
+  tag: 1.4  # Use a specific version tag for production environments
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+postgresql:
+    auth:
+        username: quantumx_user
+        password: quantumx_password
+        database: quantumx_db
+    primary:
+        podSecurityContext:
+            enabled: false
+            fsGroup: ""
+        containerSecurityContext:
+            enabled: false
+            runAsUser: "auto"
+
+    readReplicas:
+        podSecurityContext:
+            enabled: false
+            fsGroup: ""
+        containerSecurityContext:
+            enabled: false
+            runAsUser: "auto"
+
+    volumePermissions:
+        enabled: false
+        securityContext:
+            runAsUser: "auto"
